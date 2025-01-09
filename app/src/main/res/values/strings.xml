@@ -2,4 +2,13 @@
     <string name="app_name">CardBIN</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sceme">Платежная Схема</string>
+    <string name="type">Тип</string>
+    <string name="brand">Бренд</string>
+    <string name="prepaid">Предоплачена</string>
+    <string name="country">Страна</string>
+    <string name="currency">Валюта</string>
+    <string name="bank">Банк</string>
+    <string name="url">URL банка</string>
+    <string name="bank_phone">Номер Банка</string>
 </resources>

@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.shoxrux.cardbin.core.ResultWrapper
-import com.shoxrux.cardbin.data.model.CardBindResponse
+import com.shoxrux.cardbin.data.model.CardBinResponse
 import com.shoxrux.cardbin.domain.repository.BinRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -15,9 +15,9 @@ import javax.inject.Inject
 class BinViewModel @Inject constructor(private val repository: BinRepository) : ViewModel() {
 
 
-    private val successData: MutableLiveData<CardBindResponse?> =
-        MutableLiveData<CardBindResponse?>()
-    val success: LiveData<CardBindResponse?>
+    private val successData: MutableLiveData<CardBinResponse?> =
+        MutableLiveData<CardBinResponse?>()
+    val success: LiveData<CardBinResponse?>
         get() = successData
 
     private val errorData: MutableLiveData<String?> = MutableLiveData<String?>()
@@ -25,7 +25,7 @@ class BinViewModel @Inject constructor(private val repository: BinRepository) : 
         get() = errorData
 
 
-    fun getCardBin(bin: Int) {
+    fun getCardBin(bin: String) {
         viewModelScope.launch {
             when (val result = repository.getCardBin(bin)) {
                 is ResultWrapper.Success -> {

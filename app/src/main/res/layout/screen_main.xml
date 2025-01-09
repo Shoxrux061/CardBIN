@@ -1,59 +1,283 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
     tools:context=".presentation.main.MainScreen">
 
-    <FrameLayout
+    <LinearLayout
+        android:id="@+id/card_frame"
         android:layout_width="match_parent"
-        android:layout_height="210dp"
-        android:layout_margin="20dp"
-        android:background="@drawable/card_back">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <ImageButton
+            android:id="@+id/btn_history"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:background="?selectableItemBackgroundBorderless"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_history" />
+
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginHorizontal="20dp"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="25dp"
-                android:layout_marginBottom="15dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_chip" />
+            android:layout_height="210dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/card_back">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="20dp"
+                android:orientation="vertical">
 
-                <com.vicmikhailau.maskededittext.MaskedEditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/space_mono_regular"
-                    android:hint="**** ****"
-                    android:minWidth="125dp"
-                    android:textSize="20sp"
-                    android:inputType="numberDecimal"
-                    app:mask="#### ####" />
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="25dp"
+                    android:layout_marginBottom="15dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_chip" />
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/space_mono_regular"
-                    android:maxLines="1"
-                    android:text="**** ****"
-                    android:textColor="@color/white"
-                    android:textSize="20sp" />
+                    android:layout_height="wrap_content">
+
+                    <com.vicmikhailau.maskededittext.MaskedEditText
+                        android:id="@+id/bin_edt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#000000"
+                        android:drawableTint="#000000"
+                        android:fontFamily="@font/space_mono_regular"
+                        android:hint="**** ****"
+                        android:inputType="number"
+                        android:minWidth="125dp"
+                        android:textSize="20sp"
+                        app:mask="#### ####" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/space_mono_regular"
+                        android:maxLines="1"
+                        android:text="**** ****"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
             </LinearLayout>
 
+        </FrameLayout>
 
-        </LinearLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:visibility="gone">
 
-    </FrameLayout>
+            <TextView
+                android:id="@+id/scheme"
+                style="@style/textStyle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sceme"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-</LinearLayout>
+            <TextView
+                android:id="@+id/text_scheme"
+                style="@style/textStyle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:text="Visa"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@id/scheme"
+                app:layout_constraintTop_toTopOf="@id/scheme" />
+
+            <TextView
+                android:id="@+id/type"
+                style="@style/textStyle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/type"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/scheme" />
+
+            <TextView
+                android:id="@+id/text_debit"
+                style="@style/textStyle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Debit"
+                app:layout_constraintStart_toStartOf="@id/text_scheme"
+                app:layout_constraintTop_toTopOf="@id/type" />
+
+            <TextView
+                android:id="@+id/brand"
+                style="@style/textStyle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/brand"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/type" />
+
+            <TextView
+                android:id="@+id/text_brand"
+                style="@style/textStyle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Brand"
+                app:layout_constraintStart_toStartOf="@id/text_scheme"
+                app:layout_constraintTop_toTopOf="@id/brand" />
+
+            <TextView
+                android:id="@+id/prepaid"
+                style="@style/textStyle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/prepaid"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/brand" />
+
+            <TextView
+                android:id="@+id/text_prepaid"
+                style="@style/textStyle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+                app:layout_constraintStart_toStartOf="@id/text_scheme"
+                app:layout_constraintTop_toTopOf="@id/prepaid" />
+
+            <TextView
+                android:id="@+id/country"
+                style="@style/textStyle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/country"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/prepaid" />
+
+            <TextView
+                android:id="@+id/text_country"
+                style="@style/textStyle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UZ / Uzbekistan"
+                app:layout_constraintStart_toStartOf="@id/text_scheme"
+                app:layout_constraintTop_toTopOf="@id/country" />
+
+            <TextView
+                android:id="@+id/currency"
+                style="@style/textStyle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/currency"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/country" />
+
+            <TextView
+                android:id="@+id/text_currency"
+                style="@style/textStyle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UZS"
+                android:textAllCaps="true"
+                app:layout_constraintStart_toStartOf="@id/text_scheme"
+                app:layout_constraintTop_toTopOf="@id/currency" />
+
+            <TextView
+                android:id="@+id/bank"
+                style="@style/textStyle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bank"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/currency" />
+
+            <TextView
+                android:id="@+id/text_bank"
+                style="@style/textStyle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hamkor bank"
+                app:layout_constraintStart_toStartOf="@id/text_scheme"
+                app:layout_constraintTop_toTopOf="@id/bank" />
+
+            <TextView
+                android:id="@+id/url"
+                style="@style/textStyle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/url"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bank" />
+
+            <TextView
+                android:id="@+id/text_url"
+                style="@style/textStyle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="hamkor.uz"
+                app:layout_constraintStart_toStartOf="@id/text_scheme"
+                app:layout_constraintTop_toTopOf="@id/url" />
+
+            <TextView
+                android:id="@+id/bank_phone"
+                style="@style/textStyle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bank_phone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/url" />
+
+            <TextView
+                android:id="@+id/text_bank_phone"
+                style="@style/textStyle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+4589893300"
+                app:layout_constraintStart_toStartOf="@id/text_scheme"
+                app:layout_constraintTop_toTopOf="@id/bank_phone" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btn_search"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/float_btn_back"
+        android:src="@drawable/ic_search"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <ProgressBar
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/progress_bar"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_frame" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

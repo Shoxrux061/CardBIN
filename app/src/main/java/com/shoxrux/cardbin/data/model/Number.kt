@@ -1,3 +1,6 @@
 package com.shoxrux.cardbin.data.model
 
-class Number
+data class Number(
+    val length: Int?,
+    val luhn: Boolean?
+)

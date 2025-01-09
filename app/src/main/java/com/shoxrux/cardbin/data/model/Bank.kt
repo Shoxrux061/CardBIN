@@ -1,5 +1,8 @@
 package com.shoxrux.cardbin.data.model
 
 data class Bank(
-    val name: String
+    val city: String?,
+    val name: String?,
+    val phone: String?,
+    val url: String?
 )
