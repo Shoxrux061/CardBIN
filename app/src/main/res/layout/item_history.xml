@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginBottom="10dp"
+    android:animateLayoutChanges="true"
+    app:cardCornerRadius="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:id="@+id/bin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/space_mono_regular"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="42312000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:fontFamily="monospace"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Visa" />
+
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/type"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bin" />
+
+        <TextView
+            android:id="@+id/text_debit"
+            style="@style/textStyle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/type"
+            tools:text="Debit" />
+
+        <TextView
+            android:id="@+id/brand"
+            style="@style/textStyle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/brand"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/type" />
+
+        <TextView
+            android:id="@+id/text_brand"
+            style="@style/textStyle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/text_debit"
+            app:layout_constraintTop_toTopOf="@id/brand"
+            tools:text="Visa/dankort" />
+
+        <TextView
+            android:id="@+id/prepaid"
+            style="@style/textStyle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/prepaid"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/brand" />
+
+        <TextView
+            android:id="@+id/text_prepaid"
+            style="@style/textStyle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/text_debit"
+            app:layout_constraintTop_toTopOf="@id/prepaid"
+            tools:text="UZS" />
+
+        <TextView
+            android:id="@+id/country"
+            style="@style/textStyle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/country"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/prepaid" />
+
+        <TextView
+            android:id="@+id/text_country"
+            style="@style/textStyle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/text_debit"
+            app:layout_constraintTop_toTopOf="@id/country"
+            tools:text="Uz / Uzbekistan" />
+
+        <TextView
+            android:id="@+id/currency"
+            style="@style/textStyle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/currency"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/country" />
+
+        <TextView
+            android:id="@+id/text_currency"
+            style="@style/textStyle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="true"
+            app:layout_constraintEnd_toEndOf="@id/text_debit"
+            app:layout_constraintTop_toTopOf="@id/currency"
+            tools:text="UZS" />
+
+        <TextView
+            android:id="@+id/bank"
+            style="@style/textStyle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bank"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/currency" />
+
+        <TextView
+            android:id="@+id/text_bank"
+            style="@style/textStyle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/text_debit"
+            app:layout_constraintTop_toTopOf="@id/bank"
+            tools:text="Hamkorbank" />
+
+        <TextView
+            android:id="@+id/url"
+            style="@style/textStyle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/url"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bank" />
+
+        <TextView
+            android:id="@+id/text_url"
+            style="@style/textStyle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/url"
+            tools:text="hamkor.uz" />
+
+        <TextView
+            android:id="@+id/bank_phone"
+            style="@style/textStyle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bank_phone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/url" />
+
+        <TextView
+            android:id="@+id/text_bank_phone"
+            style="@style/textStyle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/text_debit"
+            app:layout_constraintTop_toTopOf="@id/bank_phone"
+            tools:text="+998903973088" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

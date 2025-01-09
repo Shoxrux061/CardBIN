@@ -79,6 +79,8 @@ dependencies {
     //Room
     implementation libs.androidx.room.runtime
     kapt(libs.androidx.room.compiler)
+    implementation libs.androidx.room.ktx
+
 
     //ViewPagerIndicator
     implementation(libs.dotsindicator)
@@ -88,4 +90,5 @@ dependencies {
 
     //Masked EditText
     implementation libs.maskededittext
+
 }

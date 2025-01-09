@@ -10,7 +10,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object Service {
+object ServiceModule {
 
     @[Provides Singleton]
     fun provideAuthService(retrofit: Retrofit): BinService {
