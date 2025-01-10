@@ -102,9 +102,9 @@
                 style="@style/textStyle2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:text="Visa"
-                android:textColor="@color/black"
+                android:text="@string/unknown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1"
                 app:layout_constraintStart_toEndOf="@id/scheme"
                 app:layout_constraintTop_toTopOf="@id/scheme" />
 
@@ -115,15 +115,17 @@
                 android:layout_height="wrap_content"
                 android:text="@string/type"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/scheme" />
+                app:layout_constraintTop_toBottomOf="@id/text_scheme" />
 
             <TextView
-                android:id="@+id/text_debit"
+                android:id="@+id/text_type"
                 style="@style/textStyle2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Debit"
-                app:layout_constraintStart_toStartOf="@id/text_scheme"
+                android:text="@string/unknown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toEndOf="@id/type"
                 app:layout_constraintTop_toTopOf="@id/type" />
 
             <TextView
@@ -133,15 +135,17 @@
                 android:layout_height="wrap_content"
                 android:text="@string/brand"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/type" />
+                app:layout_constraintTop_toBottomOf="@id/text_type" />
 
             <TextView
                 android:id="@+id/text_brand"
                 style="@style/textStyle2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Brand"
-                app:layout_constraintStart_toStartOf="@id/text_scheme"
+                android:text="@string/unknown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toEndOf="@id/brand"
                 app:layout_constraintTop_toTopOf="@id/brand" />
 
             <TextView
@@ -151,15 +155,17 @@
                 android:layout_height="wrap_content"
                 android:text="@string/prepaid"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/brand" />
+                app:layout_constraintTop_toBottomOf="@id/text_brand" />
 
             <TextView
                 android:id="@+id/text_prepaid"
                 style="@style/textStyle2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Неизвестно"
-                app:layout_constraintStart_toStartOf="@id/text_scheme"
+                android:text="@string/unknown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toEndOf="@id/prepaid"
                 app:layout_constraintTop_toTopOf="@id/prepaid" />
 
             <TextView
@@ -169,15 +175,17 @@
                 android:layout_height="wrap_content"
                 android:text="@string/country"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/prepaid" />
+                app:layout_constraintTop_toBottomOf="@id/text_prepaid" />
 
             <TextView
                 android:id="@+id/text_country"
                 style="@style/textStyle2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="UZ / Uzbekistan"
-                app:layout_constraintStart_toStartOf="@id/text_scheme"
+                android:text="@string/unknown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toEndOf="@id/country"
                 app:layout_constraintTop_toTopOf="@id/country" />
 
             <TextView
@@ -187,16 +195,17 @@
                 android:layout_height="wrap_content"
                 android:text="@string/currency"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/country" />
+                app:layout_constraintTop_toBottomOf="@id/text_country" />
 
             <TextView
                 android:id="@+id/text_currency"
                 style="@style/textStyle2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="UZS"
-                android:textAllCaps="true"
-                app:layout_constraintStart_toStartOf="@id/text_scheme"
+                android:text="@string/unknown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toEndOf="@id/currency"
                 app:layout_constraintTop_toTopOf="@id/currency" />
 
             <TextView
@@ -206,15 +215,17 @@
                 android:layout_height="wrap_content"
                 android:text="@string/bank"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/currency" />
+                app:layout_constraintTop_toBottomOf="@id/text_currency" />
 
             <TextView
                 android:id="@+id/text_bank"
                 style="@style/textStyle2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hamkor bank"
-                app:layout_constraintStart_toStartOf="@id/text_scheme"
+                android:text="@string/unknown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toEndOf="@id/bank"
                 app:layout_constraintTop_toTopOf="@id/bank" />
 
             <TextView
@@ -224,15 +235,17 @@
                 android:layout_height="wrap_content"
                 android:text="@string/url"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/bank" />
+                app:layout_constraintTop_toBottomOf="@id/text_bank" />
 
             <TextView
                 android:id="@+id/text_url"
                 style="@style/textStyle2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="hamkor.uz"
-                app:layout_constraintStart_toStartOf="@id/text_scheme"
+                android:text="@string/unknown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toEndOf="@id/url"
                 app:layout_constraintTop_toTopOf="@id/url" />
 
             <TextView
@@ -242,17 +255,18 @@
                 android:layout_height="wrap_content"
                 android:text="@string/bank_phone"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/url" />
+                app:layout_constraintTop_toBottomOf="@id/text_url" />
 
             <TextView
                 android:id="@+id/text_bank_phone"
                 style="@style/textStyle2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="+4589893300"
-                app:layout_constraintStart_toStartOf="@id/text_scheme"
+                android:text="@string/unknown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toEndOf="@id/bank_phone"
                 app:layout_constraintTop_toTopOf="@id/bank_phone" />
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

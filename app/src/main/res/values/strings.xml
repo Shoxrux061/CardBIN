@@ -11,4 +11,5 @@
     <string name="bank">Банк</string>
     <string name="url">URL банка</string>
     <string name="bank_phone">Номер Банка</string>
+    <string name="unknown">Неизвестно</string>
 </resources>

@@ -9,5 +9,14 @@
         android:id="@+id/mainScreen"
         android:name="com.shoxrux.cardbin.presentation.main.MainScreen"
         android:label="screen_main"
-        tools:layout="@layout/screen_main" />
+        tools:layout="@layout/screen_main" >
+        <action
+            android:id="@+id/action_mainScreen_to_historyListScreen"
+            app:destination="@id/historyListScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/historyListScreen"
+        android:name="com.shoxrux.cardbin.presentation.history.HistoryListScreen"
+        android:label="screent_history_list"
+        tools:layout="@layout/screen_history_list" />
 </navigation>

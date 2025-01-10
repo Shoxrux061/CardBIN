@@ -1,13 +1,15 @@
 package com.shoxrux.cardbin.presentation.main
 
+import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.shoxrux.cardbin.R
+import com.shoxrux.cardbin.core.changeScreen
 import com.shoxrux.cardbin.data.model.CardBinResponse
 import com.shoxrux.cardbin.data.room.RoomArticles
 import com.shoxrux.cardbin.data.room.RoomDao
@@ -35,6 +37,7 @@ class MainScreen : BaseFragment(R.layout.screen_main) {
         viewModel.success.observe(viewLifecycleOwner) {
             setIsLoading(false)
             setData(it, currentBin)
+            binding.data.visibility = View.VISIBLE
             currentBin = ""
         }
         viewModel.error.observe(viewLifecycleOwner) {
@@ -55,11 +58,12 @@ class MainScreen : BaseFragment(R.layout.screen_main) {
         }
 
         binding.textScheme.text = data?.scheme ?: unknownText
-        binding.textDebit.text = data?.type ?: unknownText
+        binding.textType.text = data?.type ?: unknownText
         binding.textBrand.text = data?.brand ?: unknownText
         binding.textCountry.text =
             data?.country?.name.plus(" / ${data?.country?.alpha2}").plus(" ${data?.country?.emoji}")
         binding.textCurrency.text = data?.country?.currency ?: unknownText
+        binding.textCurrency.isAllCaps = true
         binding.textBank.text = data?.bank?.name ?: unknownText
         binding.textUrl.text = data?.bank?.url ?: unknownText
         binding.textBankPhone.text = data?.bank?.phone ?: unknownText
@@ -95,9 +99,7 @@ class MainScreen : BaseFragment(R.layout.screen_main) {
             binding.binEdt.text = null
         }
         binding.btnHistory.setOnClickListener {
-            lifecycleScope.launch {
-                Log.d("TAGRoomData", "setActions:${room.getBins()}")
-            }
+            findNavController().changeScreen(MainScreenDirections.actionMainScreenToHistoryListScreen())
         }
     }
 
@@ -121,10 +123,8 @@ class MainScreen : BaseFragment(R.layout.screen_main) {
 
     private fun setIsLoading(isLoading: Boolean) {
         if (isLoading) {
-            binding.data.visibility = View.GONE
             binding.progressBar.visibility = View.VISIBLE
         } else {
-            binding.data.visibility = View.VISIBLE
             binding.progressBar.visibility = View.GONE
         }
     }
